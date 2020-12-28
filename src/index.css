@@ -1,0 +1,34 @@
+@font-face {
+  font-family: 'DancingScript';
+  src: local('DancingScript'), url(./fonts/DancingScript-Bold.ttf) format('opentype');
+}
+
+@font-face {
+  font-family: 'Acme';
+  src: local('Acme'), url(./fonts/Acme-Regular.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Knewave';
+  src: local('Knewave'), url(./fonts/Knewave-Regular.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Merriweather';
+  src: local('Merriweather'), url(./fonts/Merriweather-Regular.ttf) format('truetype');
+}
+
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+

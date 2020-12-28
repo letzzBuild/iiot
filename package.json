@@ -1,0 +1,57 @@
+{
+  "name": "reactapp",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@material-ui/core": "^4.10.0",
+    "@material-ui/icons": "^4.9.1",
+    "@material-ui/lab": "^4.0.0-alpha.55",
+    "@testing-library/jest-dom": "^4.2.4",
+    "@testing-library/react": "^9.5.0",
+    "@testing-library/user-event": "^7.2.1",
+    "axios": "^0.19.2",
+    "formik": "^2.1.4",
+    "framer-motion": "^1.11.0",
+    "glamor": "^2.20.40",
+    "material-ui-chip-input": "^2.0.0-beta.2",
+    "primeicons": "^4.0.0-rc.2",
+    "primereact": "^4.2.1",
+    "prop-types": "^15.7.2",
+    "react": "^16.13.1",
+    "react-animated-text": "^0.1.4",
+    "react-avatar": "^3.9.7",
+    "react-chips": "^0.8.0",
+    "react-cookie": "^4.0.3",
+    "react-dom": "^16.13.1",
+    "react-idle-timer": "^4.5.0",
+    "react-router": "^5.2.0",
+    "react-router-dom": "^5.2.0",
+    "react-scripts": "^3.4.1",
+    "react-select": "^3.1.0",
+    "react-spinners": "^0.8.3",
+    "react-toastify": "^6.0.5",
+    "socket.io-client": "^3.0.4",
+    "yup": "^0.32.8"
+  },
+  "scripts": {
+    "start": "PORT=3002 react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}
