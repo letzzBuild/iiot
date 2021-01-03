@@ -58,7 +58,7 @@ function Dashboard({ history }) {
         })
         .then((response) => {
           let result = response.data.result
-          if(result.status==1){
+          if(result.status===1){
             setliveSignal(result["liveSignal"]);
             setproductionCount(result["production"])
             if (result["liveSignal"] === 'Alarm ON') {
@@ -123,7 +123,7 @@ function Dashboard({ history }) {
       })
         .then((res) => {
           let response = res.data.result;
-          if (response.status == 1) {
+          if (response.status === 1) {
             SuccesToast(response.message);
             localStorage.setItem("shift", response.data['shift']);
           } else {
@@ -346,7 +346,7 @@ function Dashboard({ history }) {
               icon={<PublishIcon> </PublishIcon>}
               text={"Submit"}
               type="submit"
-              isDisabled={!(formik.dirty&&formik.isValid&&liveSignal!="Cycle ON")}
+              isDisabled={!(formik.dirty&&formik.isValid&&liveSignal!=="Cycle ON")}
             ></SecButton>
           </Grid>{" "}
         </Grid>{" "}

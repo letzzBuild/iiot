@@ -69,7 +69,7 @@ function Alarm({history}) {
         }
       ).then((res)=>{
       let response=res.data.result
-      if(response.status==1){
+      if(response.status===1){
         SuccesToast(response.message);
         history.push('/dashbaord')
 

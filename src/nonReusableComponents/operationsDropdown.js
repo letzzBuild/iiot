@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import MenuItem from "@material-ui/core/MenuItem";
 import FormHelperText from "@material-ui/core/FormHelperText";
 import FormControl from "@material-ui/core/FormControl";
@@ -14,7 +14,7 @@ export default function OperationsDropdown(props) {
       setSelectedValue(event.target.value)
       localStorage.setItem("componentName", event.target.value);
 
-      if(localStorage.getItem("componentName")!="" && localStorage.getItem("modelName")!="" && localStorage.getItem("operationName")!="")
+      if(localStorage.getItem("componentName")!=="" && localStorage.getItem("modelName")!=="" && localStorage.getItem("operationName")!=="")
         {
          props.enableButton();
         }
@@ -26,7 +26,7 @@ export default function OperationsDropdown(props) {
     } else {
       setSelectedValue(event.target.value);
       localStorage.setItem("operationName", event.target.value);
-      if(localStorage.getItem("componentName")!="" && localStorage.getItem("modelName")!="" && localStorage.getItem("operationName")!="")
+      if(localStorage.getItem("componentName")!=="" && localStorage.getItem("modelName")!=="" && localStorage.getItem("operationName")!=="")
         {
         props.enableButton();
         }
@@ -40,14 +40,14 @@ export default function OperationsDropdown(props) {
     <div>
       <FormControl style={{ marginTop: 20 }}>
         <Select
-          style={{ width: 200, color: "black" }}
+          style={{ width: 170, color: "black" }}
           required
           onChange={handleChange}
           value={selectedValue}
           name={props.name}
         >
           {(props.name === "modelName" || props.name === "operation" ) ? (
-            props.data != undefined ? (
+            props.data !== undefined ? (
               props.data.map((ele, index) => (
                
                 <MenuItem value={ele["value"]} key={index}>
@@ -59,7 +59,7 @@ export default function OperationsDropdown(props) {
                 <em>None</em>
               </MenuItem>
             )
-          ) : props.data != undefined ? (
+          ) : props.data !== undefined ? (
             props.data.map((ele, index) => (
               <MenuItem value={ele} key={index}>
                 {ele}

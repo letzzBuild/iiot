@@ -1,5 +1,5 @@
 import Paper from "@material-ui/core/Paper";
-import React, { useContext } from "react";
+import React from "react";
 import InputField from "../reusableComponents/roundTextfield.js";
 import Button from "../reusableComponents/secButton";
 import Avatar from "react-avatar";
@@ -9,7 +9,6 @@ import * as yup from "yup";
 import Forgotpass from "../nonReusableComponents/forgotPass";
 import axios from "axios";
 import ErrorToast from './errorToast';
-import SuccessToast from "./successToast";
 
 
 
@@ -37,12 +36,12 @@ function Login(props) {
           console.log(res);
           var result = res['data']['result'];
           var resultedData = result['data'];
-          if (result['status'] == 0) {
+          if (result['status'] === 0) {
             console.log(result)
             ErrorToast(result['message']);
           }
           else {
-            if (result['admin'] == true) {
+            if (result['admin'] === true) {
               localStorage.setItem('IS_LOGGED_IN', true);
               localStorage.setItem('user', 'admin');
               props.history.push('/admin')

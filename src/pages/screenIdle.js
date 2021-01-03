@@ -35,7 +35,7 @@ function IdleScreen({history}) {
     
   });
 
-  const idleReasons=['reason 1 ','reason 2 ','reason 3']
+  const idleReasons=['lunch','went outside','some other work']
 
  const formik =  useFormik({
  initialValues:{
@@ -68,7 +68,7 @@ onSubmit: (values,onSubmitProps) => {
       }
     ).then((res)=>{
     let response=res.data.result
-    if(response.status==1){
+    if(response.status===1){
       SuccesToast(response.message);
       history.push('/dashbaord')
 

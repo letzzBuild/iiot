@@ -45,8 +45,6 @@ export default function AlertDialog() {
       <Dialog
         open={open}
         onClose={handleClose}
-        aria-labelledby="alert-dialog-title"
-        aria-describedby="alert-dialog-description"
       >
         <DialogContent>
         <DialogContentText>
@@ -56,7 +54,6 @@ export default function AlertDialog() {
           <TextField
             autoFocus
             margin="dense"
-            id="name"
             label="Original Password"
             type="password"
             
@@ -64,7 +61,6 @@ export default function AlertDialog() {
               <InputAdornment position="end">
 
                 <IconButton
-                  aria-label="toggle password visibility"
                   onClick={handleClickShowPassword}
                   onMouseDown={handleMouseDownPassword}
                   edge="end"
@@ -76,15 +72,12 @@ export default function AlertDialog() {
           /><br></br>
           <TextField
             margin="dense"
-            id="name"
             label="New Password"
-           
             type="password"
             endAdornment={
               <InputAdornment position="end">
 
                 <IconButton
-                  aria-label="toggle password visibility"
                   onClick={handleClickShowPassword}
                   onMouseDown={handleMouseDownPassword}
                   edge="end"
@@ -96,7 +89,6 @@ export default function AlertDialog() {
           /><br></br>
           <TextField
             margin="dense"
-            id="name"
             label="Confirm New Password"
             
             type="password"
@@ -104,7 +96,7 @@ export default function AlertDialog() {
               <InputAdornment position="end">
 
                 <IconButton
-                  aria-label="toggle password visibility"
+
                   onClick={handleClickShowPassword}
                   onMouseDown={handleMouseDownPassword}
                   edge="end"

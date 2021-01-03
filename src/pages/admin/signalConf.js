@@ -1,4 +1,4 @@
-import React,{useState} from "react";
+import React from "react";
 import HomeMadeContainer from "../../reusableComponents/headerContainer";
 import Container from "@material-ui/core/Container";
 import Grid from "@material-ui/core/Grid";
@@ -12,9 +12,8 @@ import { useFormik } from "formik";
 import axios from "axios";
 import SuccessToast from "../../reusableComponents/successToast";
 import ErrorToast from "../../reusableComponents/errorToast";
-import Loader from "../../reusableComponents/loader";
 import {Redirect} from 'react-router-dom';
-// import * as yup from "yup";
+
 
 const useStyles = makeStyles(() => ({
   container: {
@@ -38,7 +37,6 @@ function SignalConf() {
   //   pin2:yup.string().unique(),
   //  })
 
-  const [isloading, setisloading] = useState(false);
 
   const formik = useFormik({
     initialValues: {
@@ -90,24 +88,20 @@ function SignalConf() {
 
     // validationSchema:schema,
     onSubmit : (data)=>{
-      setisloading(true);
       axios
         .post("http://127.0.0.1:5002/updateSIgnalsDetails", data)
         .then((res) => {
           console.log(res);
           let result = res["data"]["result"];
           console.log(result);
-          if (result["status"] == 1) {
+          if (result["status"] === 1) {
             SuccessToast(result["message"]);
-            setisloading(false);
           } else {
             ErrorToast(result["message"]);
-            setisloading(false);
           }
         })
         .catch((err) => {
           console.log("error");
-          setisloading(false);
           ErrorToast("Something went wrong...");
         });
       console.log("lets test");

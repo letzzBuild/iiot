@@ -16,7 +16,7 @@ export default function IconLabelButtons(props) {
     <div>
       <Button
         variant="contained"
-        style={{backgroundColor:props.color,color:props.textColor,fontWeight:"bolder"}}
+        style={{backgroundColor:props.color,color:props.textColor,fontWeight:"bolder",fontSize:12}}
         className={classes.button}
         startIcon={props.icon}
         onClick={props.handleClick}

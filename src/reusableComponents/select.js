@@ -1,11 +1,10 @@
-import React,{useState} from 'react';
+import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import InputLabel from '@material-ui/core/InputLabel';
 import MenuItem from '@material-ui/core/MenuItem';
 import FormHelperText from '@material-ui/core/FormHelperText';
 import FormControl from '@material-ui/core/FormControl';
 import Select from '@material-ui/core/Select';
-import TextField from '../reusableComponents/inputTextField.js';
 
 const useStyles = makeStyles((theme) => ({
   formControl: {
@@ -50,7 +49,7 @@ export default function SimpleSelect(props) {
         >
 
        { 
-       props.data!=undefined ? props.data.map((ele,index)=>(
+       props.data!==undefined ? props.data.map((ele,index)=>(
         <MenuItem value={ele} key={index}>{ele}</MenuItem>
       ))
        :

@@ -6,7 +6,7 @@ import { makeStyles } from "@material-ui/core/styles";
 const useStyles = makeStyles(() => ({
   container: {
     backgroundColor: "#00b0ff",
-    fontSize: 18,
+    fontSize: 14,
 
     color: "black",
     fontFamily: "Acme",
@@ -18,7 +18,7 @@ const useStyles = makeStyles(() => ({
 
   data: {
     backgroundColor: "#64dd17",
-    fontSize: 16,
+    fontSize: 12,
     color: "black",
     fontWeight: "bold",
     padding: 14,
@@ -42,19 +42,6 @@ function HeaderBody() {
   var modelNameCode = localStorage.getItem("modelName");
 
   var operationNameCode = localStorage.getItem("operationName");
-
-  // var models=JSON.parse(localStorage.getItem("models"))
-
-  // var operations=localStorage.getItem("operations")
-
-  // console.log(operations)
-
-
-  // for (let i = 0; i < models.length; i++) {
-
-  //   if()
-
-  // }
 
   return (
     <div>

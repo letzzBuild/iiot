@@ -39,8 +39,8 @@ function NetworkConf() {
       .get("http://127.0.0.1:5002/getNetworkConf")
       .then((res) => {
         let result = res["data"]["result"];
-        if (result["status"] == 1) {
-          if (result["message"] == "successfully fetched saved data") {
+        if (result["status"] === 1) {
+          if (result["message"] === "successfully fetched saved data") {
             setnetworkDetails({
               ip: result["data"]["ip"],
               dns: result["data"]["dns"],
@@ -80,7 +80,7 @@ function NetworkConf() {
           console.log(res);
           let result = res["data"]["result"];
           console.log(result);
-          if (result["status"] == 1) {
+          if (result["status"] === 1) {
             SuccessToast(result["message"]);
             setisloading(false);
           } else {

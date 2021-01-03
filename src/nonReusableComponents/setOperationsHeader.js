@@ -3,18 +3,15 @@ import Grid from "@material-ui/core/Grid";
 import Container from "@material-ui/core/Container";
 import { makeStyles } from "@material-ui/core/styles";
 import DropDown from "../nonReusableComponents/operationsDropdown";
-import Select from '../reusableComponents/select';
 import axios from 'axios';
-import { useFormik } from 'formik';
 import SecButton from '../reusableComponents/secButton';
 import Box from "@material-ui/core/Box";
 import PublishIcon from '@material-ui/icons/Publish';
-import * as yup from 'yup';
 
 const useStyles = makeStyles(() => ({
   container: {
     backgroundColor: "#00b0ff",
-    fontSize: 18,
+    fontSize: 14,
     color: "black",
     fontFamily: "Acme",
     padding: 14,
@@ -25,7 +22,7 @@ const useStyles = makeStyles(() => ({
 
   data: {
     backgroundColor: "#64dd17",
-    fontSize: 14,
+    fontSize: 12,
     color: "black",
     fontWeight: "bold",
     padding: 14,

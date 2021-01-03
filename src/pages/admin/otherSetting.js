@@ -45,8 +45,8 @@ function OtherSetting() {
     axios.get("http://127.0.0.1:5002/getOtherSettings")
       .then((res) => {
         let result = res['data']['result'];
-        if(result['status']==1){
-          if(result['message']=="successfully fetched saved data")
+        if(result['status']===1){
+          if(result['message']==="successfully fetched saved data")
           {
             setotherSettingsSavedData({
                 machineId: result['data']['machineId'],
@@ -101,7 +101,7 @@ function OtherSetting() {
         .then((res) => {
           let result = res["data"]["result"];
           console.log(result);
-          if (result["status"] == 1) {
+          if (result["status"] === 1) {
             SuccessToast(result["message"]);
           } else {
             ErrorToast(result["message"]);
@@ -181,7 +181,6 @@ function OtherSetting() {
                   error={formik.errors.machineId}
                   value={formik.values.machineId || otherSettingsSavedData.machineId }
                   touched={formik.touched.machineId}
-                  error={formik.errors.machineId}
                 ></Select>
             <InputTextField
               label={"Batch Size "}

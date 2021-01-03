@@ -88,10 +88,10 @@ export default function PermanentDrawerLeft() {
       <AppBar position="fixed" className={classes.appBar}>
         <Toolbar>
           <Typography variant="h6" noWrap>
-            Admin Dashboard{" "}
-          </Typography>{" "}
+            Admin Dashboard
+          </Typography>
           <Box ml={60}>
-            {" "}
+            
             <Dialog
               color={"#d50000"}
               bodyText={"Do you really want to shutdown the device ? "}
@@ -101,10 +101,10 @@ export default function PermanentDrawerLeft() {
               
             >
              
-            </Dialog>{" "}
+            </Dialog>
           </Box>
-        </Toolbar>{" "}
-      </AppBar>{" "}
+        </Toolbar>
+      </AppBar>
       <Router history={history}>
         <Drawer
           className={classes.drawer}
