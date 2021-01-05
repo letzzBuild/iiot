@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { ToastContainer } from "react-toastify";
 import LoadingScreen from "./pages/welcome.js";
 import LoginScreen from "./pages/login";
@@ -10,8 +10,6 @@ import Dashboard from "./pages/dashboard";
 import AdminDashboard from "./nonReusableComponents/drawer";
 
 
-export const InitialValuesContext = React.createContext();
-
 function App() {
 
 
@@ -19,16 +17,12 @@ function App() {
     localStorage.setItem("machineId", data['machineId']);
     localStorage.setItem("batchSize",data['batchSize'])
     localStorage.setItem("idleTime",data['idleTimeout'])
-    setinitialValues(data);
   }
 
-  const [initialValues, setinitialValues] = useState({});
 
 
 
   return (
-    localStorage.setItem('IS_LOGGED_IN', 'false'),
-    < InitialValuesContext.Provider value={initialValues} >
       <div className="App">
         <Router>
           <Switch>
@@ -69,7 +63,6 @@ function App() {
           pauseOnHover
         />
       </div>
-    </InitialValuesContext.Provider >
   );
 }
 

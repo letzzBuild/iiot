@@ -42,7 +42,7 @@ function Login(props) {
           }
           else {
             if (result['admin'] === true) {
-              localStorage.setItem('IS_LOGGED_IN', true);
+              localStorage.setItem('IS_LOGGED_IN','true');
               localStorage.setItem('user', 'admin');
               props.history.push('/admin')
             }

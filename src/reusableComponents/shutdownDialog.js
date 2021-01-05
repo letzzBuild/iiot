@@ -21,13 +21,7 @@ export default function AlertDialog(props) {
   };
 
   const shutdown = () => {
-    if(props.name==='shutdown'){
-      localStorage.clear();
-      console.log('shuttingdown');
-      axios.get("http://127.0.0.1:5002/shutdown").then((response) => {}).catch((error) =>{})
-      setOpen(false);
-    }
-   else{
+
     localStorage.setItem('IS_LOGGED_IN','false')
     localStorage.setItem('user', '');
     localStorage.setItem('fullName', '');
@@ -38,9 +32,16 @@ export default function AlertDialog(props) {
     localStorage.setItem('componentName','');
     localStorage.setItem('modelName','');
     localStorage.setItem('jobId','');
+
+
+    if(props.name==='shutdown'){
+      console.log('shuttingdown');
+      axios.get("http://127.0.0.1:5002/shutdown").then((response) => {}).catch((error) =>{})
+      setOpen(false);
+    }
+   else{   
     props.logout();
     setOpen(false);
-
    } 
     
   }

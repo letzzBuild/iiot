@@ -11,11 +11,6 @@ import { Redirect } from 'react-router-dom';
 
 function SetOperations(props) {
 
-
-  localStorage.setItem('componentName',"");
-  localStorage.setItem('modelName',"");
-  localStorage.setItem("operationName","");
-
   const logout = ()=>{
     props.history.push('/login')
  }
