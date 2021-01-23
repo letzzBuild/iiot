@@ -26,6 +26,8 @@ import Dialog from '../reusableComponents/shutdownDialog';
 import PowerSettingsNewIcon from "@material-ui/icons/PowerSettingsNew";
 import Box from "@material-ui/core/Box";
 import {Redirect} from 'react-router-dom';
+import ExitToAppIcon from '@material-ui/icons/ExitToApp';
+import { LocalDiningOutlined } from "@material-ui/icons";
 
 const drawerWidth = 220;
 const history = createBrowserHistory();
@@ -52,9 +54,11 @@ const useStyles = makeStyles((theme) => ({
     flex: 1,
   },
   appBar: {
-    width: `calc(100% - ${drawerWidth}px)`,
-    marginLeft: drawerWidth,
+    // width: `calc(100% - ${drawerWidth}px)`,
+    position:"relative",
+    marginLeft: 220,
     background: "#5e35b1",
+    zIndex:"1000"
   },
   drawer: {
     width: drawerWidth,
@@ -74,6 +78,13 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
+export const loggedOut = () => {
+  if(localStorage.getItem("IS_LOGGED_IN") === "true"){
+    localStorage.setItem("IS_LOGGED_IN", "false");
+    return <Redirect to='/login' />
+  }
+}
+
 export default function PermanentDrawerLeft() {
   const classes = useStyles();
 
@@ -82,26 +93,38 @@ export default function PermanentDrawerLeft() {
     return <Redirect to='/login' />
   }
   else{
+    let homePageImage = require('../images/test-image.jpg');
   return (
     <div className={classes.root}>
       <CssBaseline />
-      <AppBar position="fixed" className={classes.appBar}>
+      <AppBar position="relative"  className={classes.appBar}>
         <Toolbar>
           <Typography variant="h6" noWrap>
-            Admin Dashboard
+            Admin Configuration Dashboard
           </Typography>
+          {/* <img
+            style={{
+              position: "relative",
+              zIndex:"20"
+
+            }}
+            src={homePageImage}/> */}
           <Box ml={60}>
-            
+            <div style={{display:"flex", position: "relative"}}>
+              <span style={{position:"relative", left:"-50px"}}>
             <Dialog
               color={"#d50000"}
               bodyText={"Do you really want to shutdown the device ? "}
               buttonText={"Shutdown"}
               name={"shutdown"}
               icon={<PowerSettingsNewIcon> </PowerSettingsNewIcon>}
-              
             >
-             
             </Dialog>
+            </span>
+            <span>
+            <Dialog color={"#00e676"}  name="logout" onClick={() => loggedOut()} bodyText={"Do you really want to logout? "} buttonText={"Logout"} icon={<ExitToAppIcon></ExitToAppIcon>}></Dialog>
+            </span>
+            </div>
           </Box>
         </Toolbar>
       </AppBar>

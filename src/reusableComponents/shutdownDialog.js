@@ -50,7 +50,7 @@ export default function AlertDialog(props) {
 
   return (
     <div>
-      <Button startIcon={props.icon} onClick={handleClickOpen} style={{ backgroundColor: props.color, color: "white", fontWeight: "bold", padding: 8 }}>
+      <Button startIcon={props.icon} onClick={handleClickOpen} style={{ backgroundColor: "black", color: "white", fontWeight: "bold", padding: 8, top: "50px" }}>
         {props.buttonText}
 
       </Button>
@@ -65,10 +65,10 @@ export default function AlertDialog(props) {
           </DialogContentText>
         </DialogContent>
         <DialogActions>
-          <Button onClick={handleClose} style={{ backgroundColor: "#d50000", color: "white", fontWeight: 'bold', padding: 10 }}>
+          <Button onClick={handleClose} style={{ backgroundColor: "#d50000", color: "white", fontWeight: 'bold', padding: 12, right: "150px", bottom:"7px"}}>
             Cancel
           </Button>
-          <Button onClick={shutdown} style={{ backgroundColor: "#64dd17", color: "white", fontWeight: 'bold', padding: 10 }} autoFocus>
+          <Button onClick={shutdown} style={{ backgroundColor: "#1a5f1a", color: "white", fontWeight: 'bold', padding: 12, right: "350px", bottom:"7px"}} autoFocus>
             Yes !!
           </Button>
         </DialogActions>

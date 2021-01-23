@@ -21,7 +21,7 @@ export default function IconLabelButtons(props) {
         color="secondary"
         className={classes.button}
         startIcon={props.icon}
-        style={{fontWeight:'bold'}}
+        style={{top:"18px", right:"86px", position:'relative', fontWeight:'bold'}}
         disabled={props.isDisabled}
         onClick={props.handleClick}
       >

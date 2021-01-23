@@ -70,26 +70,11 @@ function Login(props) {
     < div >
       <center>
         <form onSubmit={formik.handleSubmit}>
-          <Paper
-            style={{
-              backgroundColor: "#ffff00",
-              width: 320,
-              paddingRight: 90,
-              paddingTop: 15,
-              paddingBottom: 15,
-            }}
-          >
-            <Paper
-              style={{ backgroundColor: "#ff1744", width: 320, padding: 25 }}
-            >
               <Paper
-                style={{ backgroundColor: "#6200ea", width: 300, padding: 50 }}
+                style={{ backgroundColor: "ivory", width: 300, padding: 50, position:"fixed", zIndex:"200", top:"150px", left:"100px" }}
               >
-                <Avatar
-                  name="Srinivas Induction Hardening"
-                  size="70"
-                  round={true}
-                />
+                <span style={{fontSize:"32px", fontWeight:"bold", position:"relative", bottom:"20px", right:"90px"}}>Login</span>
+
                 <br></br>
                 <br></br>
 
@@ -98,7 +83,7 @@ function Login(props) {
                   onChange={formik.handleChange}
                   onBlur={formik.handleBlur}
                   value={formik.values.username}
-                  text="Username"
+                  text="UserName"
                   error={formik.errors.username}
                   touched={formik.touched.username}
                   width={260}
@@ -118,8 +103,6 @@ function Login(props) {
                 <Button text="Submit" type="submit"></Button>
                 <Forgotpass></Forgotpass>
               </Paper>
-            </Paper>
-          </Paper>
         </form>
       </center>
     </div >

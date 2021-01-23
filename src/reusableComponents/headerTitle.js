@@ -28,8 +28,16 @@ function HeaderTitle(props) {
     <div className={classes.root}>
         <Grid container spacing={0} >
           <Grid item xs={12} sm={12}>
-            <Paper  style={{fontFamily:'DancingScript',fontWeight:'bold',padding:10,backgroundColor:'#512da8',color:'white'}}>Srinivas Induction Hardening
-            <span style={{marginLeft:300,fontWeight:'bolder',fontFamily:'Acme'}}>IIOT CNC MONITORING</span></Paper>
+            <Paper  style={{
+              fontWeight:'bold',
+              padding:10,
+              backgroundColor:'#355892',
+              position:"fixed",
+              color:'white', 
+              width:"100%",
+              top: "0"}}>
+              Srinivas Induction Hardening
+            <span style={{marginLeft:300}}>IIOT CNC MONITORING</span></Paper>
           </Grid>
         </Grid>
     </div>

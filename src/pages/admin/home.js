@@ -3,8 +3,6 @@ import Typography from '@material-ui/core/Typography';
 import {Redirect} from 'react-router-dom';
 
 function Home() {
-
-
   let islogged = localStorage.getItem('IS_LOGGED_IN');
   if (islogged === 'false') {
     return <Redirect to='/login' />
@@ -13,8 +11,8 @@ function Home() {
   else{
  return (
         <div>
-        
-        <Typography paragraph style={{ textAlign: "center"}}>
+          
+        {/* <Typography paragraph style={{ textAlign: "center"}}>
          <div style={{marginTop: 100,marginLeft:80,color: "black",fontSize: 55,fontWeight: "bold",fontFamily: "Dancing Script" ,display: "flex",alignItems: "center",justifyContent: "center"}}>
            <p>Welcome to the Configuration Dashboard of
            </p> 
@@ -31,7 +29,7 @@ function Home() {
             </center>  
             </footer>
          
-        </Typography>
+        </Typography> */}
         </div>
     )
 }

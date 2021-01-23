@@ -38,9 +38,8 @@ export default function AlertDialog() {
 
   return (
     <div>
-      <Button   onClick={handleClickOpen} style={{color:"white",fontSize:12}}>
+      <Button   onClick={handleClickOpen} style={{color:"black",fontSize:12, bottom:"57px", left: "70px"}}>
        Reset Password
-       
       </Button>
       <Dialog
         open={open}

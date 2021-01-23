@@ -9,63 +9,61 @@ import Dialog from '../reusableComponents/shutdownDialog';
 
 
 export default function Login(props) {
+  let homePageImage = require('../images/test-image.jpg');
+  let loginwareIcon = require('../images/loginware-logo.JPG');
+  let machineInfo = localStorage.getItem('machineId');
 
   return (
-    < div >
 
-      <HeaderTitle text={"IIOT CNC Monitoring "}></HeaderTitle>
-
-      <Grid container>
-        <Grid item xs={12} sm={12}>
-          <Paper
-            elevation={20}
-            style={{
-              // fontFamily: "Acme",
-              fontWeight: "bold",
-              backgroundColor: "#ffc107",
-              color: 'black',
-              fontSize: 26,
-              border: "2px solid #ffd600",
-              padding: 4
-            }}
-          >
-            <Grid container>
-              <Grid
+    <div style={{margin: "0%", position: "relative"}}>
+       <HeaderTitle text={"IIOT CNC Monitoring "}></HeaderTitle>
+          <Grid container>
+            <Grid
                 item
                 sm={10}
                 style={{
                   display: "flex",
                   alignItems: "center",
                   justifyContent: "center",
+                  fontSize: "25px",
+                  fontWeight: "bold",
+                  position:'relative',
+                  zIndex: "100", 
+                  top: "45px"
                 }}
-              >
-                MACHINE ID : {localStorage.getItem('machineId')}
-              </Grid>
-
-
-
-              <Grid
-                item
-                sm={2}
-                spacing={0}
-                style={{
-                  display: "flex",
-                  alignItems: "center",
-                  justifyContent: "start",
-                }}
-              >
-                <Dialog color={"#d50000"} name="shutdown" bodyText={"Do you really want to shutdown the device ? "} buttonText={"Shutdown"} icon={<PowerSettingsNewIcon></PowerSettingsNewIcon>}></Dialog>
-              </Grid>
+              >MACHINE ID : {machineInfo}
             </Grid>
-          </Paper>
-        </Grid>
-      </Grid>
-      <p style={{ marginTop: 30 }}></p>
-
-      <LoginForm history={props.history}></LoginForm>
-
-
-    </div >
+              <Dialog color={"#d50000"} name="shutdown" bodyText={"Do you really want to shutdown the device ? "} 
+              buttonText={"Shutdown"} icon={<PowerSettingsNewIcon></PowerSettingsNewIcon>}></Dialog>
+            </Grid>
+        <LoginForm history={props.history}></LoginForm>
+    <img
+    style={{
+      position: "fixed",
+      top:"100px"
+    }}
+     src={homePageImage}/>
+       <div style={{
+         position:"absolute",
+          top:"470px",
+          textAlign:"center",
+          right: "-340px"
+       }}>
+       <span style={{    
+         position: "fixed",
+         top: "550px",
+         left: "100px"}}>Powered By:</span>
+       <span style={{    
+         position: "fixed",
+         top: "550px",
+         left: "200px"}}><strong>Loginware Softtec Pvt. Ltd.</strong></span>
+       {/* <img style={{
+         position:"relative",
+         top:"90px",
+         right:"353px"
+       }} src={loginwareIcon}/> */}
+       </div> 
+    </div>
   )
 }
 

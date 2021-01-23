@@ -25,29 +25,16 @@ import IdleTimer from 'react-idle-timer';
 
 function Dashboard({ history }) {
 
-
   const idleTimerRef = useRef(null);
-
   let idleTimeout= localStorage.getItem("idleTime")
-
   var timeout = Number(idleTimeout.split(" ")[0])
-  
-
-
   var machineId = localStorage.getItem("machineId");
-
   var shift = localStorage.getItem("shift");
-
   var fullName = localStorage.getItem("fullName");
-
   var componentName = localStorage.getItem("componentName");
-
   var modelName = localStorage.getItem("operationName");
-
   var operationName = localStorage.getItem("operationName");
-
   const [productionCount, setproductionCount] = useState(0);
-
   const [liveSignal, setliveSignal] = useState("");
 
   useEffect(() => {
@@ -100,9 +87,7 @@ function Dashboard({ history }) {
 
     onSubmit: (values, onSubmitProps) => {
       let jobId = values.jobId;
-
       localStorage.setItem("jobId", jobId);
-
       var result = {
         'jobId': jobId,
         'machineId': machineId,
@@ -141,11 +126,11 @@ function Dashboard({ history }) {
   });
 
   let islogged = localStorage.getItem('IS_LOGGED_IN');
-  if (islogged === 'false') {
-    return <Redirect to='/login' />
-  }
+  // if (islogged === 'false') {
+  //   return <Redirect to='/login' />
+  // }
 
-  else{
+  // else{
   return (
     <div>
       <HeaderTitle text={"IIOT CNC Monitoring "}> </HeaderTitle>{" "}
@@ -359,6 +344,6 @@ function Dashboard({ history }) {
   );
 }
 
-}
+//}
 
 export default Dashboard;
