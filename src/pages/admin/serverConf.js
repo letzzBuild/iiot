@@ -139,7 +139,7 @@ export default function ServerConf() {
     (
       <div className={classes.root}>
         <br></br>
-        <Container text={"Configire the device to your server"}></Container>
+        <Container text={"Server Configuration"}></Container>
         <br></br>
 
         {isloading ? (
@@ -154,7 +154,7 @@ export default function ServerConf() {
             }}
           >
             <Grid item sm={12}>
-              <Loader color={"#ff1744"} size={60}></Loader>
+              <Loader color={"grey"} size={60}></Loader>
             </Grid>
           </Grid>
         ) : (

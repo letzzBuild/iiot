@@ -148,7 +148,7 @@ function OtherSetting() {
     <div style={{ marginTop: 100 }}>
       <form onSubmit={formik.handleSubmit}>
         <HomeMadeContainer
-          text={"Configure Other Settings for the device"}
+          text={"Other Configuration"}
         ></HomeMadeContainer>
 
         {isloading ? (
@@ -167,7 +167,7 @@ function OtherSetting() {
             </Grid>
           </Grid>
         ) : (
-          <div style={{ marginLeft: 220, marginTop: 10 }}>
+          <div style={{ marginLeft: 300, marginTop: 10 }}>
             <br></br>
                 <Select
                   label={"Select Machine id"}

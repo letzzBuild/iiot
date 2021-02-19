@@ -107,10 +107,10 @@ function NetworkConf() {
 
   return (
     <div style={{ marginTop: 100 }}>
-      <HomeMadeContainer text={"Configure Network for the device"} />
+      <HomeMadeContainer text={"Network Configuration"} />
       <br></br>
       <br></br>
-      <center>
+      <center style={{position:"relative", marginLeft:"250px"}}>
         {isloading ? (
           <Grid
             container

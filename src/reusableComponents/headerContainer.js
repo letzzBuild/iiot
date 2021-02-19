@@ -10,15 +10,15 @@ function headerContainer(props) {
     return (
         <div>
             <Container style={{
-        marginTop:2,
-        marginLeft:200,
+        marginTop:"12px",
+        marginLeft:"285px",
         padding:10,
         paddingLeft:80,
-        fontSize:30,
-        fontFamily: 'Acme',
+        fontSize:24,
         color:'black',
-        background:"#ffc400",
+        background:"lightgrey",
         borderRadius:10,
+        maxWidth: "410px",
 
             }} maxWidth="sm"  variant="outlined" >{props.text}</Container>
         </div>

@@ -4,6 +4,8 @@ import {Redirect} from 'react-router-dom';
 
 function Home() {
   let islogged = localStorage.getItem('IS_LOGGED_IN');
+  let homePageImage = require('../../images/test-image.jpg');
+  let loginwareIcon = require('../../images/loginware-logo.JPG');
   if (islogged === 'false') {
     return <Redirect to='/login' />
   }
@@ -11,25 +13,31 @@ function Home() {
   else{
  return (
         <div>
-          
-        {/* <Typography paragraph style={{ textAlign: "center"}}>
-         <div style={{marginTop: 100,marginLeft:80,color: "black",fontSize: 55,fontWeight: "bold",fontFamily: "Dancing Script" ,display: "flex",alignItems: "center",justifyContent: "center"}}>
-           <p>Welcome to the Configuration Dashboard of
-           </p> 
-          </div>
-          <br></br>
-          <span style={{color: "#fb8c00",marginLeft:40,fontWeight:"bolder",fontSize: 30,fontFamily:"Knewave"}}>IIOT CNC Monitoring Device ... </span>
-          <br></br>
-          <p></p>
-          
-            <footer style={{marginTop:150,fontSize:20,fontWeight:'bold',fontFamily:"Dancing Script"}}> 
-            <center>
-              <span style={{fontSize:15,fontWeight:'bold',fontFamily: "Knewave"}}> powered by </span><br></br>
-              Loginware Soft tech
-            </center>  
-            </footer>
+            <img
+            style={{
+              position: "fixed",
+              zIndex:"20",
+              left:"62px"
+            }}
+            src={homePageImage}/>
          
-        </Typography> */}
+         <span style={{    
+            position: "relative",
+            top: "200px",
+            left: "56px",
+            zIndex:"30"}}>Powered By:</span>
+          <span style={{    
+            position: "relative",
+            top: "200px",
+            left: "70px",
+            zIndex:"30"}}><strong>Loginware Softtec Pvt. Ltd.</strong></span>
+          <img style={{
+            position:"relative",
+            top:"210px",
+            zIndex:"30",
+            left:"-115px",
+            top:"260px"
+          }} src={loginwareIcon}/>
         </div>
     )
 }

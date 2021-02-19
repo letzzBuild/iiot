@@ -128,8 +128,8 @@ function Alarm({history}) {
                 <Random
                  text="Alarm has been generated on the Machine!!"
                  effect="stretch"
-                 effectChange={2.0}
-                 effectDuration={0.4}
+                //  effectChange={2.0}
+                //  effectDuration={0.4}
 />
               </Grid>
               <Grid

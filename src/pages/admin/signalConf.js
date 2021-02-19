@@ -135,68 +135,15 @@ function SignalConf() {
 
   return (
     <div style={{ marginTop: 100 }}>
-      <HomeMadeContainer text={"Configure Signals for the device"} />
+      <HomeMadeContainer text={"Signals Configuration"} />
       <br></br>
       <br></br>
       
-
-      <Grid container spacing={10}>
-        <Grid item xs={4}>
-          <Container
-            maxWidth="sm"
-            style={{
-              backgroundColor: "#0091ea",
-              fontSize: 18,
-              fontWeight: "bolder",
-              color: "white",
-              borderRadius: 16,
-              marginLeft: 45,
-              fontFamily: "Acme",
-              textAlign: "center",
-              padding: 10,
-            }}
-          >
-            Signal Name
-          </Container>{" "}
-        </Grid>
-        <Grid item xs={4}>
-          <Container
-            maxWidth="sm"
-            style={{
-              backgroundColor: "#0091ea",
-              fontSize: 18,
-              fontWeight: "bolder",
-              color: "white",
-              borderRadius: 16,
-              marginLeft: 45,
-              fontFamily: "Acme",
-              textAlign: "center",
-              padding: 10,
-            }}
-          >
-            Pin number
-          </Container>{" "}
-        </Grid>
-        <Grid item xs={4}>
-          <Container
-            maxWidth="sm"
-            style={{
-              backgroundColor: "#0091ea",
-              fontSize: 18,
-              fontWeight: "bolder",
-              color: "white",
-              borderRadius: 16,
-              marginLeft: 45,
-              fontFamily: "Acme",
-              textAlign: "center",
-              padding: 10,
-            }}
-          >
-            Enable / disable
-          </Container>{" "}
-        </Grid>
-      </Grid>
-
+      <div style={{position:"relative", display:"flex", fontSize:"16px", fontWeight:"bold"}}>
+      <span style={{position:"relative", left:"92px"}}>Signal Name</span>
+      <span style={{position:"relative", left:"318px"}}>Enable / disable</span>
+      <span style={{position:"relative", left:"550px"}}>Pin number</span>
+      </div>
       <center>
         <div>
           <h5 style={{ color: "red" }}>
@@ -550,9 +497,7 @@ function SignalConf() {
             color="primary"
             className={classes.margin}
             type="submit"
-            style={{ backgroundColor: "#512da8", color: "white" }}
-            
-          >
+            style={{ backgroundColor: "#512da8", color: "white" }}>
             Submit
           </Button>
         </Box>

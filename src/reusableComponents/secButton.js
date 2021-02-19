@@ -10,18 +10,15 @@ const useStyles = makeStyles((theme) => ({
 
 export default function IconLabelButtons(props) {
   const classes = useStyles();
-
-  
-
   return (
     <div>
       <Button
         type={props.type}
         variant="contained"
-        color="secondary"
+        color="primary"
         className={classes.button}
         startIcon={props.icon}
-        style={{top:"18px", right:"86px", position:'relative', fontWeight:'bold'}}
+        style={{top:"18px", right:"9px", position:'relative', fontWeight:'bold', backgroundColor:"#3f51b5"}}
         disabled={props.isDisabled}
         onClick={props.handleClick}
       >

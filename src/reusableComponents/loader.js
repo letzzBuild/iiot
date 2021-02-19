@@ -18,8 +18,7 @@ export default function AwesomeComponent (props){
           css={override}
           size={props.size}
           color={props.color}
-          loading={true}
-          
+          loading={true} 
         />
       </div>
     );

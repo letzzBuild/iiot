@@ -54,16 +54,14 @@ const useStyles = makeStyles((theme) => ({
     flex: 1,
   },
   appBar: {
-    // width: `calc(100% - ${drawerWidth}px)`,
-    position:"relative",
+    width: `calc(100% - ${drawerWidth}px)`,
     marginLeft: 220,
-    background: "#5e35b1",
+    background: "#3f51b5",
     zIndex:"1000"
   },
   drawer: {
     width: drawerWidth,
-    flexShrink: 0,
-    position: "relative",
+    flexShrink: 0
   },
   drawerPaper: {
     width: drawerWidth,
@@ -93,22 +91,15 @@ export default function PermanentDrawerLeft() {
     return <Redirect to='/login' />
   }
   else{
-    let homePageImage = require('../images/test-image.jpg');
+    
   return (
     <div className={classes.root}>
       <CssBaseline />
-      <AppBar position="relative"  className={classes.appBar}>
+      <AppBar className={classes.appBar}>
         <Toolbar>
           <Typography variant="h6" noWrap>
             Admin Configuration Dashboard
           </Typography>
-          {/* <img
-            style={{
-              position: "relative",
-              zIndex:"20"
-
-            }}
-            src={homePageImage}/> */}
           <Box ml={60}>
             <div style={{display:"flex", position: "relative"}}>
               <span style={{position:"relative", left:"-50px"}}>
@@ -122,7 +113,7 @@ export default function PermanentDrawerLeft() {
             </Dialog>
             </span>
             <span>
-            <Dialog color={"#00e676"}  name="logout" onClick={() => loggedOut()} bodyText={"Do you really want to logout? "} buttonText={"Logout"} icon={<ExitToAppIcon></ExitToAppIcon>}></Dialog>
+            <Dialog color={"grey"}  name="logout" onClick={() => loggedOut()} bodyText={"Do you really want to logout? "} buttonText={"Logout"} icon={<ExitToAppIcon></ExitToAppIcon>}></Dialog>
             </span>
             </div>
           </Box>
@@ -159,7 +150,7 @@ export default function PermanentDrawerLeft() {
                 >
                   <ListItemIcon
                     style={{
-                      color: "#f50057",
+                      color: "blue",
                     }}
                   >
                     {" "}
