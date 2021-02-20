@@ -5,27 +5,50 @@ import { makeStyles } from "@material-ui/core/styles";
 
 const useStyles = makeStyles(() => ({
   container: {
-    backgroundColor: "#00b0ff",
+    backgroundColor: "rgb(53, 88, 146)",
     fontSize: 14,
-
-    color: "black",
+    color: "white",
     fontFamily: "Acme",
-    padding: 14,
+    padding: 6,
     textAlign: "center",
     borderRadius: 6,
-    border: "2px solid #18ffff",
+    border: "2px solid rgb(53, 88, 146)",
+    marginTop: 50,
   },
 
   data: {
-    backgroundColor: "#64dd17",
+    backgroundColor: "lavender",
     fontSize: 12,
     color: "black",
     fontWeight: "bold",
     padding: 14,
     textAlign: "center",
     borderRadius: 6,
-    border: "2px solid #ffff00",
+    marginTop: 10,
+    height: 60,
   },
+  fullName:{
+    backgroundColor: "rgb(53, 88, 146)",
+    color: "white",
+    fontFamily: "Acme",
+    padding: 6,
+    textAlign: "center",
+    borderRadius: 6,
+    border: "2px solid rgb(53, 88, 146)",
+    marginTop: 50,
+  },
+  fullNamedata: {
+    backgroundColor: "lavender",
+    fontSize: 12,
+    color: "black",
+    fontWeight: "bold",
+    padding: 14,
+    height: 60,
+    textAlign: "left",
+    borderRadius: 6,
+    marginTop: 10,
+  },
+
 }));
 
 function HeaderBody() {
@@ -49,10 +72,10 @@ function HeaderBody() {
         <Grid item sm={2}>
           <Grid container>
             <Grid item sm={12}>
-              <Container className={classes.container}>OPERATOR NAME</Container>
+              <Container className={classes.fullName}>OPERATOR NAME</Container>
             </Grid>
             <Grid item sm={12} spacing={1}>
-              <Container className={classes.data}>{fullName}</Container>
+              <Container className={classes.fullNamedata}>{fullName}</Container>
             </Grid>
           </Grid>
         </Grid>

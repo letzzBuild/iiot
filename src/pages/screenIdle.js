@@ -108,10 +108,10 @@ let islogged = localStorage.getItem('IS_LOGGED_IN');
             style={{
               fontFamily: "Acme",
               fontWeight: "bold",
-              backgroundColor: "#ffc107",
+              backgroundColor: "white",
               color: "#d50000",
               fontSize:26,
-              border:"2px solid #ffd600",
+              border:"2px solid white",
               padding:4
             }}
           >
@@ -123,13 +123,15 @@ let islogged = localStorage.getItem('IS_LOGGED_IN');
                   display: "flex",
                   alignItems: "center",
                   justifyContent: "center",
+                  marginTop: 50
                 }}
               >
                 <Random
                  text="Machine is Idle for a long time"
                  effect="stretch"
-                 effectChange={2.0}
-                 effectDuration={0.4}
+                //  effectChange={2.0}
+                //  effectDuration={0.4}
+                 paused={true}
 />
               </Grid>
 
@@ -141,6 +143,7 @@ let islogged = localStorage.getItem('IS_LOGGED_IN');
                   display: "flex",
                   alignItems: "center",
                   justifyContent: "start",
+                  marginTop: 50
                 }}
               >
                 <Button
@@ -191,7 +194,7 @@ let islogged = localStorage.getItem('IS_LOGGED_IN');
                   marginTop:15
                 }}>
 
-          <SecButton type="submit" isDisabled={!(formik.isValid&&formik.dirty)}  icon={<PublishIcon></PublishIcon>} text={"Submit"}></SecButton>
+          <SecButton type="submit"  isDisabled={!(formik.isValid&&formik.dirty)}  icon={<PublishIcon></PublishIcon>} text={"Submit"}></SecButton>
 
         </Grid>
 

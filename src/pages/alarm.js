@@ -82,7 +82,6 @@ function Alarm({history}) {
      console.log(error)
       })
 
-
       console.log(onSubmitProps) 
       onSubmitProps.setSubmitting(false);
       onSubmitProps.resetForm() 
@@ -108,10 +107,11 @@ function Alarm({history}) {
             style={{
               fontFamily: "Acme",
               fontWeight: "bold",
-              backgroundColor: "#ffc107",
+              height:100,
+              backgroundColor: "white",
               color: "#d50000",
               fontSize:26,
-              border:"2px solid #ffd600",
+              border:"2px solid white",
               padding:4
             }}
           >
@@ -123,6 +123,7 @@ function Alarm({history}) {
                   display: "flex",
                   alignItems: "center",
                   justifyContent: "center",
+                  marginTop: 50
                 }}
               >
                 <Random
@@ -130,7 +131,8 @@ function Alarm({history}) {
                  effect="stretch"
                 //  effectChange={2.0}
                 //  effectDuration={0.4}
-/>
+                paused={true}
+                />
               </Grid>
               <Grid
                 item
@@ -140,12 +142,14 @@ function Alarm({history}) {
                   display: "flex",
                   alignItems: "center",
                   justifyContent: "end",
+                  marginTop: 50                 
                 }}
               >
                 <Button
                   color={"#2196f3"}
                   text={`Job ID : ${jobId}`}
                   textColor={"white"}
+
                 ></Button>
               </Grid>
               <Grid
@@ -156,17 +160,16 @@ function Alarm({history}) {
                   display: "flex",
                   alignItems: "center",
                   justifyContent: "start",
+                  marginTop: 50,
                 }}
               >
                 <Button
                   color={"#d50000"}
                   text={"Alarm On"}
                   textColor={"white"}
+                  marginTop = {100}
                 ></Button>
               </Grid>
-
-
-
             </Grid>
           </Paper>
         </Grid>

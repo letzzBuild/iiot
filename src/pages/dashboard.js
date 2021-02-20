@@ -141,11 +141,12 @@ function Dashboard({ history }) {
             style={{
               fontFamily: "Acme",
               fontWeight: "bold",
-              backgroundColor: "#ffc107",
+              backgroundColor: "white",
               color: "#d50000",
               fontSize: 26,
-              border: "2px solid #ffd600",
+              border: "2px solid white",
               padding: 4,
+              marginTop: 50
             }}
           >
             <Grid container>
@@ -158,10 +159,11 @@ function Dashboard({ history }) {
                   alignItems: "center",
                   justifyContent: "start",
                   paddingLeft: 20,
+               
                 }}
               >
                 <Button
-                  color={"#ff3d00"}
+                  color={"#2196f3"}
                   text={"Inspection"}
                   textColor={"white"}
                   icon={<EmojiEventsIcon> </EmojiEventsIcon>}
@@ -185,6 +187,28 @@ function Dashboard({ history }) {
                   text={`Production ${productionCount}`}
                   textColor={"white"}
                   icon={<EmojiEventsIcon> </EmojiEventsIcon>}
+                >
+                  {" "}
+                </Button>{" "}
+              </Grid>{" "}
+              
+              <Grid
+                item
+                sm={2}
+                spacing={0}
+                style={{
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "start",
+                  paddingLeft: 30,
+                }}
+              >
+                <Button
+                  color={"#2196f3"}
+                  text={"Tool Change"}
+                  textColor={"white"}
+                  handleClick={releaseMachine}
+                  icon={<BuildIcon> </BuildIcon>}
                 >
                   {" "}
                 </Button>{" "}
@@ -229,27 +253,6 @@ function Dashboard({ history }) {
                     {" "}
                   </Button>
                 )}{" "}
-              </Grid>{" "}
-              <Grid
-                item
-                sm={2}
-                spacing={0}
-                style={{
-                  display: "flex",
-                  alignItems: "center",
-                  justifyContent: "start",
-                  paddingLeft: 10,
-                }}
-              >
-                <Button
-                  color={"#ff1744"}
-                  text={"Tool Change"}
-                  textColor={"white"}
-                  handleClick={releaseMachine}
-                  icon={<BuildIcon> </BuildIcon>}
-                >
-                  {" "}
-                </Button>{" "}
               </Grid>{" "}
               <Grid
                 item
