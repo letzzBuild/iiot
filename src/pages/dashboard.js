@@ -48,7 +48,7 @@ function Dashboard({ history }) {
           if(result.status===1){
             setliveSignal(result["liveSignal"]);
             setproductionCount(result["production"])
-            if (result["liveSignal"] === 'Alarm ON') {
+            if (result["liveSignal"] === 'Alarm') {
               history.push('/alarm')
             }
           } 
@@ -224,7 +224,7 @@ function Dashboard({ history }) {
                   paddingLeft: 30,
                 }}
               >
-                {" "}
+                
                 {liveSignal === "Machine Idle" ? (
                   <Button
                     color={"#ff8f00"}
@@ -232,16 +232,16 @@ function Dashboard({ history }) {
                     textColor={"black"}
                     icon={<EmojiObjectsIcon> </EmojiObjectsIcon>}
                   >
-                    {" "}
+                    
                   </Button>
-                ) : liveSignal === "Cycle ON" ? (
+                ) : liveSignal === "Cycle" ? (
                   <Button
                     color={"#76ff03"}
                     text={liveSignal ? liveSignal : "laoding.."}
                     textColor={"black"}
                     icon={<EmojiObjectsIcon> </EmojiObjectsIcon>}
                   >
-                    {" "}
+                  
                   </Button>
                 ) : (
                   <Button
@@ -250,10 +250,10 @@ function Dashboard({ history }) {
                     textColor={"white"}
                     icon={<EmojiObjectsIcon> </EmojiObjectsIcon>}
                   >
-                    {" "}
+                    
                   </Button>
-                )}{" "}
-              </Grid>{" "}
+                )}
+              </Grid>
               <Grid
                 item
                 sm={2}

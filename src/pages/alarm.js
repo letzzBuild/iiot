@@ -38,8 +38,10 @@ function Alarm({history}) {
     alarmReason: yup.string().required()
   });
 
-
-  const alarmReasons = ['Program Error Alarm','Safety Alarm','Machine Hardware fail Alarm','Preventive Maintenance Alarm','Tooling Alarm','Other']
+  
+  const alarmDataDict = JSON.parse(localStorage.getItem('alarmData'));
+  const alarmReasons = alarmDataDict.keys();
+  
 
   const formik=useFormik({
     initialValues:{
@@ -57,7 +59,8 @@ function Alarm({history}) {
         'fullName': fullName,
         'componentName': componentName,
         'modelName': modelName,
-        'alarmReason': alarmReason
+        'alarmReason': alarmReason,
+        'errorCode': alarmDataDict[alarmReason] //will give error code for selected alarm value
       };
 
     axios(

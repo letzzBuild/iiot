@@ -10,17 +10,38 @@ function Home({ history, valueSetter }) {
   let loginwareIcon = require('../images/loginware-logo.JPG');
 
   useEffect(() => {
+    var machineId="";
     axios
       .get("http://127.0.0.1:5002")
       .then((response) => {
         console.log(response);
         console.log(response.data.result);
+        machineId=response.data.result.data.machineId;
         valueSetter(response.data.result.data);
-       history.push('/login');
+
+        //if previos request happens successfully then make request to get alarm data and store values in local storage.
+         axios.get("http://192.168.1.19/BE/api/iiot/GetAlarmReasonsList",{params:{'MachineId':machineId}}).then((response) => {
+        var result = response.data;
+        var alarmValuesDict={};
+        for(let i=0; i<result.length;i++){
+           let ErrorCode=result[i].ErroCode;
+           let Reason=result[i].Reasons;
+           alarmValuesDict[Reason]=ErrorCode;
+           }
+        localStorage.setItem("alarmData",JSON.stringify(alarmValuesDict));
+
+
+
+    }).catch((error) => {
+      console.log('error fetching alarm data')
+    })
+
+        history.push('/login');
       })
       .catch((error) => {
         console.log(error);
         history.push('/login');
+
       });
 
   }, []);
@@ -34,7 +55,7 @@ function Home({ history, valueSetter }) {
      src={homePageImage}/>
      <h3 style={{
        position: "absolute",
-       top:"50px", 
+       top:"50px",
        left:"40px",
        fontSize:"50px"
        }}>IIOT CNC Monitoring Device</h3>
@@ -45,7 +66,7 @@ function Home({ history, valueSetter }) {
           left: "230px"
        }}>
        <span>Powered By:</span>
-       <span style={{    
+       <span style={{
          position: "relative",
          top: "26px",
          right: "130px"}}><strong>Loginware Softtec Pvt. Ltd.</strong></span>
