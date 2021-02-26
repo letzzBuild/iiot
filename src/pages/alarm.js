@@ -40,7 +40,7 @@ function Alarm({history}) {
 
   
   const alarmDataDict = JSON.parse(localStorage.getItem('alarmData'));
-  const alarmReasons = alarmDataDict.keys();
+  const alarmReasons = Object.keys(alarmDataDict);
   
 
   const formik=useFormik({

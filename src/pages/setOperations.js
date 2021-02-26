@@ -89,7 +89,7 @@ function SetOperations(props) {
         </Grid>
         <p></p>
 
-        {/* <OperationHeaderBody history={props.history}></OperationHeaderBody> */}
+        <OperationHeaderBody history={props.history}></OperationHeaderBody>
 
       </div >
     );

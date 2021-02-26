@@ -55,7 +55,7 @@ function HeaderBody(props) {
     let machineId = localStorage.getItem("machineId");
     console.log(machineId);
     console.log(modelCode);
-    axios.get('http://192.168.1.19/BE/api/iiot/OperationList',
+    axios.get('http://192.168.0.112/BE/api/iiot/OperationList',
       {params:{'machineCode':machineId,'modelCode':modelCode}}
     )
       .then((res) => {

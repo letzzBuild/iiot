@@ -20,11 +20,11 @@ function Home({ history, valueSetter }) {
         valueSetter(response.data.result.data);
 
         //if previos request happens successfully then make request to get alarm data and store values in local storage.
-         axios.get("http://192.168.1.19/BE/api/iiot/GetAlarmReasonsList",{params:{'MachineId':machineId}}).then((response) => {
+         axios.get("http://192.168.0.112/BE/api/iiot/GetAlarmReasonsList",{params:{'MachineId':machineId}}).then((response) => {
         var result = response.data;
         var alarmValuesDict={};
         for(let i=0; i<result.length;i++){
-           let ErrorCode=result[i].ErroCode;
+           let ErrorCode=result[i].ErrorCode;
            let Reason=result[i].Reasons;
            alarmValuesDict[Reason]=ErrorCode;
            }
