@@ -60,14 +60,7 @@ export default function ServerConf() {
 
     onSubmit: (values) => {
       setisloading(true);
-      console.log(values);
-      const url = "http://" + values.api + "/serverTest";
       axios
-        .get(url)
-        .then((res) => {
-          console.log(res);
-          //if success then save it in local db
-          axios
             .post("http://127.0.0.1:5002/updateServerIP", {
               endpoint: values.api,
             })
@@ -89,12 +82,6 @@ export default function ServerConf() {
               setisloading(false);
               ErrorToast("Error, something went wrong in saving the data");
             });
-        })
-        .catch((err) => {
-          console.log("error");
-          setisloading(false);
-          ErrorToast("Error, failed to connect to your server");
-        });
     },
 
     enableReinitialize: true,

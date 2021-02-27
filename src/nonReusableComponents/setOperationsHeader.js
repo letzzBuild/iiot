@@ -52,10 +52,13 @@ function HeaderBody(props) {
 
 
   const getAllOperations = (modelCode) => {
+
     let machineId = localStorage.getItem("machineId");
+    let ipAddress = localStorage.getItem("ipAddress");;
+
     console.log(machineId);
     console.log(modelCode);
-    axios.get('http://192.168.0.112/BE/api/iiot/OperationList',
+    axios.get("http://"+ ipAddress + "/BE/api/iiot/OperationList",
       {params:{'machineCode':machineId,'modelCode':modelCode}}
     )
       .then((res) => {

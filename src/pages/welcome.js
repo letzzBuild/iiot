@@ -14,13 +14,13 @@ function Home({ history, valueSetter }) {
     axios
       .get("http://127.0.0.1:5002")
       .then((response) => {
-        console.log(response);
         console.log(response.data.result);
         machineId=response.data.result.data.machineId;
         valueSetter(response.data.result.data);
 
+        let ipAddress = localStorage.getItem('ipAddress');
         //if previos request happens successfully then make request to get alarm data and store values in local storage.
-         axios.get("http://192.168.0.112/BE/api/iiot/GetAlarmReasonsList",{params:{'MachineId':machineId}}).then((response) => {
+        axios.get("http://" + ipAddress + "/BE/api/iiot/GetAlarmReasonsList",{params:{'MachineId':machineId}}).then((response) => {
         var result = response.data;
         var alarmValuesDict={};
         for(let i=0; i<result.length;i++){

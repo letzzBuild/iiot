@@ -17,6 +17,7 @@ function App() {
     localStorage.setItem("machineId", data['machineId']);
     localStorage.setItem("batchSize",data['batchSize'])
     localStorage.setItem("idleTime",data['idleTimeout'])
+    localStorage.setItem("ipAddress",data['severIp']);
     
   }
 
