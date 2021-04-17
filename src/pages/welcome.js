@@ -20,7 +20,7 @@ function Home({ history, valueSetter }) {
 
         let ipAddress = localStorage.getItem('ipAddress');
         //if previos request happens successfully then make request to get alarm data and store values in local storage.
-        axios.get("http://" + ipAddress + "/BE/api/iiot/GetAlarmReasonsList",{params:{'MachineId':machineId}}).then((response) => {
+        axios.get("http://10.130.10.6/BE/api/iiot/GetAlarmReasonsList",{params:{'MachineId':machineId}}).then((response) => {
         var result = response.data;
         var alarmValuesDict={};
         for(let i=0; i<result.length;i++){

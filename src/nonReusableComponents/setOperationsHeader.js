@@ -58,7 +58,7 @@ function HeaderBody(props) {
 
     console.log(machineId);
     console.log(modelCode);
-    axios.get("http://"+ ipAddress + "/BE/api/iiot/OperationList",
+    axios.get("http://10.130.10.6/BE/api/iiot/OperationList",
       {params:{'machineCode':machineId,'modelCode':modelCode}}
     )
       .then((res) => {
@@ -95,7 +95,7 @@ function HeaderBody(props) {
 
   return (
 
-    <div>
+    <div style={{position: "fixed", top:"140px"}}>
       <Grid container spacing={1}>
         <Grid item sm={2}>
           <Grid container>
